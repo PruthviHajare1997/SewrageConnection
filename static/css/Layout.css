@@ -1,0 +1,334 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+    opacity: 0;
+    transition: 1s all;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure space between logo and links */
+    /* width: 100vw; */
+    background-color: #fff;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+    padding: 10px 70px;
+    
+}
+
+.navbar-logo {
+    color: #ff3f34;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0px 20px;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: 1.2em;
+    /* margin-right: 10%; */
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: #22008a;
+    /* color: #444; */
+    padding: 0px 20px;
+    font-weight: 700;
+    transition: 0.4s all;
+    padding-top: 15px;
+}
+
+.navbar-links li.navbar-dropdown {
+    position: relative;
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding: 20px 0;
+    top: 125%;
+    transform: translateY(50px);
+    left: 0;
+    /* width: 250px; */
+    width: 325px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+    /* box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3); */
+    /* border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; */
+    z-index: 111;
+    transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown .dropdown a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+
+.navbar-dropdown .dropdown a:hover {
+    padding-left: 30px;
+}
+
+.navbar-links li a:hover {
+    color: #ff6600;
+    /* color: #ff3f34; */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /* height: 10vh; */
+    /* background-color: #f00; */
+    background-image: url("http://lorempixel.com/1366/698/food/");
+    background-size: cover;
+}
+
+.header-inner {
+    text-align: center;
+    color: #ff3f34;
+    text-shadow: 0px 10px 10px rgba(0, 0, 0, .8);
+}
+
+.header-inner h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 130px;
+}
+
+.header-inner form input[type="search"] {
+    position: relative;
+    width: 500px;
+    border: none;
+    padding: 15px;
+    border-radius: 27px;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
+    z-index: 11;
+}
+
+.header-inner form input[type="search"]:focus {
+    outline: none;
+}
+
+.header-inner form input[type="search"]:focus + div {
+    z-index: 1;
+    opacity: 1;
+}
+
+::placeholder {
+    color: #666;
+    font-weight: 400;
+}
+
+/* button to top */
+
+#buttonTop {
+    display: inline-block;
+    background-color: #2E3191;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #buttonTop::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #buttonTop:hover {
+    cursor: pointer;
+    background-color: #2E3191;
+  }
+  #buttonTop:active {
+    background-color: #2E3191;
+  }
+  #buttonTop.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+/* Additional CSS */
+
+.logo_name {
+    width: 70px;
+    height: auto;
+    margin-left: 50%;
+}
+
+.contentm-70{
+    margin: 2% 0%;
+    width: 100%;
+}
+
+.navbar-dropdown-Class a {
+    font-size: 1.4em;
+    color: #ff6600 !important;
+}
+
+/* Card Here */
+
+.reminder-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.reminder-card-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #F1F1F1;
+    padding: 18px 32px;
+}
+
+.reminder-card-header i {
+    margin-right: 10px;
+}
+
+.reminder-card-body p {
+    margin-bottom: 10px;
+    padding: 3px 10px;
+}
+
+.reminder-card-body hr {
+    margin: 10px 0;
+    border: 1px solid gray;
+}
+
+.companyName{
+    text-decoration: none;
+    padding-top: 15px;
+    color: #ff6600;
+    font-weight: 700;
+}
+
+  @keyframes bell-animation {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(0); }
+    75% { transform: rotate(15deg); }
+    100% { transform: rotate(0); }
+  }
+  
+  .bell-icon-animated {
+    animation: bell-animation 0.5s ease-in-out infinite;
+  }
+
+  
+  .btn {
+    background: rgb(0, 159, 211);
+    color: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  .btn:hover {
+    background: #fff;
+    color: rgb(0, 159, 211);
+  }
+  .btn1 {
+    background: rgb(211, 0, 193);
+    color: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  .btn1:hover {
+    background: #fff;
+    color: rgb(211, 0, 162);
+  }
+
+  .btn-success {
+    background: rgb(0, 211, 39);
+    color: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  .btn-success:hover {
+    background: #fff;
+    color: rgb(0, 211, 39);
+  }
+
+  .btn3 {
+    background: rgb(59, 38, 222);
+    color: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  .btn3:hover {
+    background: #fff;
+    color: rgb(59, 38, 222);
+  }
+
+  .btn4 {
+    background: rgb(235, 148, 26);
+    color: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  .btn4:hover {
+    background: #fff;
+    color:  rgb(235, 148, 26);
+  }
+
+  
+  .btn-danger {
+    background: rgb(239, 41, 84);
+    color: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  .btn-danger:hover {
+    background: #fff;
+    color: rgb(239, 41, 84);
+  }
